@@ -3,7 +3,7 @@
 namespace JOOservices\XLogger\Services\Adapters;
 
 use JOOservices\XLogger\Models\Interfaces\LoggerEntityInterface;
-use JOOservices\XLogger\Models\Loggger;
+use JOOservices\XLogger\Models\Logger;
 use JOOservices\XLogger\Services\Interfaces\LoggerAdapterInterface;
 
 class DatabaseAdapter implements LoggerAdapterInterface
@@ -15,7 +15,7 @@ class DatabaseAdapter implements LoggerAdapterInterface
         string $level,
         string $status
     ): LoggerEntityInterface {
-        return Loggger::create([
+        return Logger::create([
             'ip' => $ip,
             'context' => $context,
             'message' => $message,

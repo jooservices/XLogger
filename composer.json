@@ -15,6 +15,8 @@
             "role": "Developer"
         }
     ],
+    "version": "0.0.1",
+    "type": "library",
     "require": {
         "php": "^8.2",
         "dyrynda/laravel-model-uuid": "^8.1",

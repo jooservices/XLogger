@@ -3,12 +3,18 @@
 namespace JOOservices\XLogger\Services;
 
 use JOOservices\XLogger\Models\Interfaces\LoggerEntityInterface;
+use JOOservices\XLogger\Services\Adapters\DatabaseAdapter;
 use JOOservices\XLogger\Services\Interfaces\LoggerAdapterInterface;
 use JOOservices\XLogger\Services\Interfaces\LoggerInterface;
 
-readonly class LoggerService implements LoggerInterface
+class LoggerService implements LoggerInterface
 {
-    public function __construct(private LoggerAdapterInterface $logger) {}
+    public function __construct(private ?LoggerAdapterInterface $logger = null)
+    {
+        if (!$this->logger) {
+            $this->logger = new DatabaseAdapter();
+        }
+    }
 
     public function emergency(string $message, array $context = []): LoggerEntityInterface
     {

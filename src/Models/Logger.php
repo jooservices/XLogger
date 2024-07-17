@@ -14,7 +14,7 @@ use JOOservices\XLogger\Models\Interfaces\LoggerEntityInterface;
  * @property string $level
  * @property string $status
  */
-class Loggger extends Model implements LoggerEntityInterface
+class Logger extends Model implements LoggerEntityInterface
 {
     use GeneratesUuid;
     use HasFactory;

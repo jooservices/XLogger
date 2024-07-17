@@ -45,3 +45,4 @@ storage/*.key
 
 /tmp
 ./tmp/
+/.php-cs-fixer.cache
